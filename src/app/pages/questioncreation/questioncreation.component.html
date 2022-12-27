@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header p-4">
+                    <h4 class="card-tittle mb-0">Question Bank Creation</h4>
+                </div>
+                <form class="p-4" [formGroup]="QuestionCreationForm" (ngSubmit)="QuestionCreationSubmit()">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Skills</mat-label>
+                                <mat-select formControlName="skill">
+                                    <mat-option value="Web Scrapping" >Web Scrapping</mat-option>
+                                    <mat-option value="Cloud" >Cloud</mat-option>
+                                    <mat-option value="SQL" >SQL</mat-option>
+                                    <mat-option value="MongoDB" >MongoDB</mat-option>
+                                    <mat-option value="Express JS" >Express JS</mat-option>
+                                    <mat-option value="Git" >Git</mat-option>
+                                    <mat-option value="Python" >Python</mat-option>
+                                    <mat-option value="Django" >Django</mat-option>
+                                    <mat-option value="Node JS" >Node JS</mat-option>
+                                    <mat-option value="REST API" >REST API</mat-option>
+                                    <mat-option value="Angular" >Angular</mat-option>
+                                    <mat-option value="Redux" >Redux</mat-option>
+                                    <mat-option value="React" >React</mat-option>
+                                    <mat-option value="TypeScript" >TypeScript</mat-option>
+                                    <mat-option value="JavaScript" >JavaScript</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+        
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>select Level</mat-label>
+                                <mat-select formControlName="level">
+                                    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+    
+                        </div>
+                    </div>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Write a Question</mat-label>
+                        <textarea rows="10" formControlName="question" matInput></textarea>
+                    </mat-form-field>
+
+                    <div class="text-center">
+                        <!-- <button type="submit" mat-raised-button color="">Back</button> &nbsp;&nbsp;&nbsp; -->
+
+                        <button type="submit" [disabled]="!QuestionCreationForm.valid" mat-raised-button color="primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

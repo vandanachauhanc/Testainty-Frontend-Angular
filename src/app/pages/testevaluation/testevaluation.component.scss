@@ -1,0 +1,20 @@
+::ng-deep.test_result_component{
+    .mat-horizontal-stepper-header-container{
+        display: none !important;
+    }
+    .question_p{
+        text-align: left;
+    }
+
+   .btn_click_ans_review:is(:hover, :focus, :active){
+        background-color: #3BC3FF;
+    }
+
+    .submitStep{
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

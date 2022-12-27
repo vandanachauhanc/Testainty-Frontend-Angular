@@ -1,0 +1,48 @@
+
+<app-loader></app-loader>
+<section class="candidateIntervieScreen">
+    
+    <div class="container mt-4">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4>Full Name: <strong>{{allQuestionData?.first_name}} {{allQuestionData?.last_name}}</strong></h4>
+            <div id="ten-countdown"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <mat-stepper orientation="horizontal">
+                        <mat-step *ngFor="let customerGroup of allQuestionData?.questions; let i = index">
+                            <ng-template matStepLabel>{{i + 1}}</ng-template>
+                            <ng-template matStepContent>
+                                <div class="p-4 pb-2">
+                                    <p class="question_p">
+                                        <strong>{{i + 1}}.</strong>
+                                         {{customerGroup.question}}
+                                    </p>
+                                    <mat-form-field appearance="fill">
+                                        <textarea rows="9" name="customerGroup[i]" id="customerGroup[i]"  [(ngModel)]="answere"  matInput placeholder="write your answer here..."
+                                             required></textarea>
+                                    </mat-form-field>
+                                    <div>
+                                        <button mat-raised-button (click)="collectAnswere(customerGroup, answere)"  matStepperNext>Next</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                        <mat-step class="">
+                            <div class="submitStep">
+                                <div>
+                                    <h4>Thank You for Interview we will contact soon !!</h4>
+                                    <!-- <button mat-raised-button matStepperPrevious>Back</button> &nbsp;&nbsp; -->
+                                    <div class="d-flex justify-content-center">
+                                        <button (click)="formSubmit()" type="submit" mat-raised-button color="primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-step>
+                    </mat-stepper>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

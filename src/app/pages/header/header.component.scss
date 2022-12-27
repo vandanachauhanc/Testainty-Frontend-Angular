@@ -1,0 +1,42 @@
+.dropdown-toggle::before {
+  display: none;
+}
+
+.dropstart .dropdown-menu[data-bs-popper] {
+  top: 54px;
+  right: 60%;
+  left: auto;
+}
+
+// multi level dropdown
+ul{
+  li{
+    padding: 7px 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    i{
+      padding-right: 10px;
+    }
+  }
+}
+.parentHover {
+  position: relative;
+  cursor: pointer;
+}
+
+.child {
+  display: none;
+}
+
+.parentHover:hover>ul {
+  display: block;
+  z-index: 9;
+  position: absolute;
+  left: 120px;
+  top: 30px;
+  background: #fff;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 40%);
+  padding: 12px;
+  list-style-type: none;
+}
+

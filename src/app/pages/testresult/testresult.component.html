@@ -1,0 +1,67 @@
+<app-loader></app-loader>
+<section class="test_result_component">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between border-bottom">
+                            <h4>Candidate Name: {{result_data?.first_name}}</h4>
+                            <h4>Position: {{result_data?.position_applied_for}}</h4>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-between">
+                                <h2>Score Breakdown</h2>
+                                <h2>Points: {{result_data?.total_scored_point?.got_points}} / {{result_data?.total_scored_point?.total_point}}</h2>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12 col-lg-3 mb-3" *ngFor="let item of result_data?.skills_scored">
+                                    <div class="card skill_set_box p-3">
+                                        <div class="">
+                                            <p>Skills Name : <b>{{item?.skill_name}}</b></p>
+                                            <p>Scored : <b> {{item?.answered}} / {{item?.total_answer}} answered</b></p>
+                                            <p>Total Scored : <b>{{item?.percentage}}%</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="col-md-3">
+                                    <div class="card skill_set_box p-3">
+                                        <div class="">
+                                            <p>Skills Name : <b>Angular</b></p>
+                                            <p>Scored : <b>8 / 10 onswered</b></p>
+                                            <p>Total Scored : <b>80%</b></p>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+
+
+                        <form class=" mt-5" [formGroup]="resultStatusForm" (ngSubmit)="submitCandidateResult()">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-md-3">
+                                    <mat-form-field appearance="outline" class="mb-0 pb-0">
+                                        <mat-label>Status</mat-label>
+                                        <mat-select formControlName="test_result">
+                                            <mat-option value="pass">Pass</mat-option>
+                                            <mat-option value="fail">Fail</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button mat-button  mat-raised-button [disabled]="!resultStatusForm.valid" class=""
+                                        color="primary">Submit</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

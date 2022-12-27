@@ -1,0 +1,76 @@
+$light_blue: #3BC3FF;
+
+body {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #e4e4e4;
+}
+
+.card {
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    .card-tittle{
+        font-size: 19px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+}
+.mat-row:nth-child(2n) {
+    background-color: #f2f2f2;
+  }
+
+mat-form-field {
+    width: 100%;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: $light_blue;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $light_blue;
+}
+.mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
+    background: $light_blue;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: $light_blue;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: rgb(174 218 238);
+}
+
+.mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+    background-color: #c6170b;
+}
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: #0e9019;
+}
+
+.question_p {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.answer_p {
+    font-size: 17px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+.badge{
+    padding: 7px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
